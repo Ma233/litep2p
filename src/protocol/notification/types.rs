@@ -160,7 +160,7 @@ pub enum NotificationEvent {
 
         /// Direction of the substream.
         ///
-        /// [`Direction::Inbound`](crate::protocol::Direction::Outbound) indicates that the
+        /// [`Direction::Inbound`](crate::protocol::Direction::Inbound) indicates that the
         /// substream was opened by the remote peer and
         /// [`Direction::Outbound`](crate::protocol::Direction::Outbound) that it was
         /// opened by the local node.
