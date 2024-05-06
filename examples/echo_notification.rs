@@ -29,7 +29,6 @@ use litep2p::{
         ConfigBuilder as NotificationConfigBuilder, NotificationEvent, NotificationHandle,
         ValidationResult,
     },
-    transport::quic::config::Config as QuicConfig,
     types::protocol::ProtocolName,
     Litep2p, PeerId,
 };
@@ -105,10 +104,7 @@ fn make_litep2p() -> (Litep2p, NotificationHandle) {
     (
         Litep2p::new(
             ConfigBuilder::new()
-                .with_quic(QuicConfig {
-                    listen_addresses: vec!["/ip4/127.0.0.1/udp/0/quic-v1".parse().unwrap()],
-                    ..Default::default()
-                })
+                .with_quic(Default::default())
                 .with_notification_protocol(echo_config)
                 .build(),
         )
